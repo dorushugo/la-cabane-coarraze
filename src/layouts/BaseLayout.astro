@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "La Cabane - Coarraze : maisonnette en bois 22 m², bain nordique chauffé au bois, terrain 1200 m². Entre Pau, Lourdes et les Pyrénées. Idéal pour un séjour en couple.",
+} = Astro.props;
+
+const fullTitle = title === "Accueil" ? "La Cabane - Coarraze | Gîte de charme à Coarraze" : `${title} | La Cabane - Coarraze`;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+</head>
+<body>
+  <slot name="cursor" />
+  <slot name="header" />
+  
+  <main class="main-content">
+    <slot />
+  </main>
+  
+  <slot name="footer" />
+  
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => initAnimations());
+    } else {
+      initAnimations();
+    }
+  </script>
+</body>
+</html>

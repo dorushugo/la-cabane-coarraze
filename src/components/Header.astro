@@ -1,0 +1,153 @@
+---
+const isHomePage = Astro.url.pathname === '/';
+---
+
+<header class:list={['header', { 'header--over-hero': isHomePage }]} id="header">
+  <nav class="header-nav">
+    <div class="header-nav-inner">
+      <a href="/" class="logo-block" aria-label="La Cabane - Accueil">
+        <span class="logo-text">La Cabane</span>
+        <span class="logo-tagline">Coarraze</span>
+      </a>
+      
+      <div class="nav-right">
+        <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Réserver</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    background-color: var(--color-off-white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+  }
+  
+  .header--over-hero {
+    background-color: transparent;
+    border-bottom-color: transparent;
+  }
+  
+  .header--over-hero .logo-text,
+  .header--over-hero .logo-tagline {
+    color: var(--color-white);
+  }
+  
+  .header--over-hero .btn-outline {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-white);
+  }
+  
+  .header--over-hero .btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-pine);
+    border-color: var(--color-white);
+  }
+  
+  .header.scrolled {
+    background-color: var(--color-off-white);
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .header.scrolled .logo-text {
+    color: var(--color-pine);
+  }
+  
+  .header.scrolled .logo-tagline {
+    color: var(--color-wood);
+  }
+  
+  .header.scrolled .btn-outline {
+    border-color: var(--color-pine);
+    color: var(--color-pine);
+  }
+  
+  .header.scrolled .btn-outline:hover {
+    background-color: var(--color-pine);
+    color: var(--color-white);
+  }
+  
+  .header-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--container-padding);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    min-height: 52px;
+  }
+  
+  .header--over-hero .header-nav-inner {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+  
+  .logo-block {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-pine);
+    line-height: 1;
+    transition: color var(--transition-base);
+  }
+  
+  .logo-tagline {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-wood);
+    margin-top: 4px;
+    transition: color var(--transition-base);
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-right .btn {
+    min-height: 44px;
+    padding: var(--space-2) var(--space-5);
+    font-size: 0.75rem;
+  }
+  
+  @media (max-width: 768px) {
+    .header-nav-inner {
+      padding: var(--space-4) var(--container-padding-sm);
+    }
+    .logo-text { font-size: var(--text-xl); }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  
+  function updateHeaderScroll() {
+    if (!header) return;
+    const isOverHero = header.classList.contains('header--over-hero');
+    if (isOverHero && window.scrollY > 80) {
+      header.classList.add('scrolled');
+    } else if (isOverHero && window.scrollY <= 80) {
+      header.classList.remove('scrolled');
+    } else if (!isOverHero) {
+      header.classList.add('scrolled');
+    }
+  }
+  
+  window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+  updateHeaderScroll();
+</script>

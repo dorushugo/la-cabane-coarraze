@@ -1,0 +1,208 @@
+/* ==========================================================================
+   La Cabane - Styles Globaux
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import './variables.css';
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-off-white);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html:not(.lenis) {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-off-white);
+  font-weight: 400;
+  overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Typographie */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-6xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-5xl);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: 400;
+}
+
+p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-wood);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+section {
+  padding: var(--space-24) 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header .eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-wood);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+}
+
+/* Boutons - touch-friendly min 44px */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-pine);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-pine-light);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(44, 62, 53, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-pine);
+  border-color: var(--color-pine);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-pine);
+  color: var(--color-white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-pine);
+  border-color: var(--color-white);
+}
+
+/* Main content - compensate for fixed header */
+.main-content {
+  padding-top: 0;
+}
+
+/* Utils */
+.text-center { text-align: center; }
+.bg-off-white { background-color: var(--color-off-white); }
+.bg-stone { background-color: var(--color-stone); }
+.bg-sand { background-color: var(--color-sand); }
+.bg-pine { background-color: var(--color-pine); color: var(--color-white); }
+.bg-pine h2, .bg-pine h3, .bg-pine p { color: inherit; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  h1 { font-size: var(--text-5xl); }
+  h2 { font-size: var(--text-4xl); }
+  section { padding: var(--space-20) 0; }
+  .container {
+    padding-left: var(--container-padding-md);
+    padding-right: var(--container-padding-md);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  section { padding: var(--space-16) 0; }
+  .container {
+    padding-left: var(--container-padding-sm);
+    padding-right: var(--container-padding-sm);
+  }
+}

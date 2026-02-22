@@ -1,0 +1,895 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+
+// Images (using the ones we moved)
+const heroImage = '/images/762533986.jpg'; // Exterior
+const bathImage = '/images/762534381.jpg'; // Bain nordique
+const galleryImages = [
+  '/images/762534377.jpg', // Extérieur
+  '/images/762534393.jpg', // Chambre
+  '/images/762534292.jpg', // Other
+  '/images/762534527.jpg'  // Other
+];
+
+const reviews = [
+  {
+    author: "Martin",
+    location: "France",
+    text: "Accueil convivial, site au calme, logement très chaleureux!, literie très agréable.",
+    rating: 5
+  },
+  {
+    author: "Chamand",
+    location: "France",
+    text: "Très propre, Fabrice est super et il est attentionné avec ses invités, au top le bain nordique, franchement je vous le conseille.",
+    rating: 5
+  }
+];
+---
+
+<BaseLayout title="Accueil">
+  <CustomCursor slot="cursor" />
+  <Header slot="header" />
+  
+  <!-- Hero Section -->
+  <section class="hero" data-parallax>
+    <div class="hero-bg" data-parallax-bg style={`background-image: url('${heroImage}');`}></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text" data-reveal>
+        <p class="hero-eyebrow">Gîte de charme</p>
+        <h1 class="hero-title">Refuge paisible<br/>aux portes des Pyrénées</h1>
+      </div>
+    </div>
+    
+    <a href="#intro" class="hero-scroll interactive-element">
+      <span>Découvrir</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- Intro Section -->
+  <section id="intro" class="intro bg-off-white" data-reveal>
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <span class="eyebrow">Bienvenue à La Cabane</span>
+          <h2>L'évasion par nature</h2>
+          <p class="lead">
+            Maisonnette en bois de 22 m², idéale pour un séjour en couple. Nichée dans un cadre calme et verdoyant à Coarraze, entre Pau, Lourdes et les montagnes des Pyrénées-Atlantiques. Intérieur moderne et parfaitement équipé, terrasse de 8 m² et terrain privatif de 1200 m².
+          </p>
+          <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-primary interactive-element mt-6">Vérifier les disponibilités</a>
+        </div>
+        <div class="intro-stats" data-reveal-stagger>
+          <div class="stat-card" data-reveal-item>
+            <span class="stat-value">9.2</span>
+            <span class="stat-label">Situation géographique</span>
+          </div>
+          <div class="stat-card" data-reveal-item>
+            <span class="stat-value">3</span>
+            <span class="stat-label">Expériences vécues</span>
+          </div>
+          <div class="stat-card" data-reveal-item>
+            <span class="stat-value">1</span>
+            <span class="stat-label">Bain Nordique Privatif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bain Nordique Section -->
+  <section class="feature-section bg-sand">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-image" data-reveal>
+          <div class="image-wrapper" data-parallax>
+            <img src={bathImage} alt="Le Bain Nordique" data-parallax-bg />
+          </div>
+        </div>
+        <div class="feature-content" data-reveal>
+          <span class="eyebrow">Détente absolue</span>
+          <h2>Le Bain Nordique</h2>
+          <p class="lead">
+            Bain à remous chauffé au bois — une expérience unique sous les étoiles. L'eau chauffée au feu de bois vous procurera une relaxation profonde dans le calme du Béarn.
+          </p>
+          <p>
+            Sur demande préalable (prévoir 24 à 48 h d'anticipation, 4 h de chauffe nécessaires). Disponible en supplément.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Équipements -->
+  <section class="amenities bg-off-white" data-reveal>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Le logement</span>
+        <h2>Équipements & commodités</h2>
+      </div>
+      <div class="amenities-grid" data-reveal-stagger>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src={bathImage} alt="Le Bain Nordique" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>Bain nordique</h4>
+            <p>Chauffé au bois, sur demande (supplément)</p>
+          </div>
+        </div>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src="/images/762534292.jpg" alt="Cuisine équipée" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>Cuisine équipée</h4>
+            <p>Kitchenette complète</p>
+          </div>
+        </div>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src="/images/762534339.jpg" alt="Climatisation" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>Climatisation</h4>
+            <p>Réversible / chauffage</p>
+          </div>
+        </div>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src="/images/762534393.jpg" alt="WiFi" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>WiFi</h4>
+            <p>Connexion gratuite</p>
+          </div>
+        </div>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src="/images/762534527.jpg" alt="Parking" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>Parking</h4>
+            <p>Privé gratuit sur place</p>
+          </div>
+        </div>
+        <div class="amenity-item" data-reveal-item>
+          <div class="amenity-image">
+            <img src="/images/762534377.jpg" alt="Terrain 1200 m²" />
+          </div>
+          <div class="amenity-content">
+            <span class="amenity-dot"></span>
+            <h4>Terrain 1200 m²</h4>
+            <p>Jardin et terrasse 8 m²</p>
+          </div>
+        </div>
+      </div>
+      <div class="amenities-footer">
+        <p class="amenities-note">
+          Linge de lit, serviettes, peignoirs et savon inclus. Service de ménage disponible en supplément.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="gallery bg-pine text-white">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow" style="color: var(--color-wood-light);">L'intérieur</span>
+        <h2>Un cocon chaleureux</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+          1 chambre, 1 salle de bains avec douche à l'italienne. Cuisine entièrement équipée, climatisation, WiFi. Pas de télévision — pour favoriser le repos, la déconnexion et le contact avec la nature.
+        </p>
+      </div>
+      
+      <div class="gallery-grid" data-reveal-stagger>
+        {galleryImages.map((src, index) => (
+          <div class={`gallery-item item-${index}`} data-reveal-item>
+            <img src={src} alt="Intérieur de la cabane" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis / Reviews -->
+  <section class="reviews bg-off-white">
+    <div class="container">
+      <div class="reviews-header" data-reveal>
+        <div class="badge">Exceptionnel</div>
+        <h2>Ce que disent nos invités</h2>
+        <p class="lead">Évaluée par les clients après leur séjour à La Cabane - Coarraze. 3 expériences vécues.</p>
+      </div>
+      
+      <div class="reviews-grid" data-reveal-stagger>
+        {reviews.map(review => (
+          <div class="review-card" data-reveal-item>
+            <div class="review-stars">
+              {Array(review.rating).fill(0).map(() => (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--color-wood)">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="review-text">« {review.text} »</p>
+            <div class="review-author">
+              <strong>{review.author}</strong>
+              <span>{review.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Emplacement -->
+  <section id="carte" class="location bg-stone" data-reveal>
+    <div class="container">
+      <div class="location-header">
+        <span class="eyebrow">Où nous trouver</span>
+        <h2>Excellente situation géographique</h2>
+        <p class="lead">4 Chem. d'Escaraude, 64800 Coarraze. À 8 km des grottes de Bétharram, 21 km de la gare de Lourdes, 22 km de la basilique et du Palais Beaumont. Aéroport Tarbes-Lourdes-Pyrénées à 23 km. Canoë, VTT, randonnées et gastronomie locale à proximité.</p>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.25%2C43.15%2C-0.18%2C43.22&layer=mapnik&marker=43.1736%2C-0.2322"
+          width="100%"
+          height="400"
+          style="border: 0; border-radius: var(--radius-lg);"
+          loading="lazy"
+          title="La Cabane - Coarraze sur la carte"
+        ></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=4+Chem.+d'Escaraude,+64800+Coarraze,+France" target="_blank" rel="noopener noreferrer" class="map-cta btn btn-primary interactive-element">
+          Voir sur Google Maps → 
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="reservation" class="cta bg-wood text-white" data-reveal>
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Prêt pour l'évasion ?</h2>
+        <p>Réservez dès maintenant votre séjour à La Cabane sur Booking.com.</p>
+        <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white interactive-element mt-6">Réserver sur Booking.com</a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 500px;
+    max-height: 100svh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: -191.3px 0;
+    background-size: cover;
+    background-position: top center;
+    will-change: transform;
+    z-index: 0;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+  }
+  
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-6);
+    color: var(--color-sand);
+  }
+  
+  .hero-title {
+    color: var(--color-white);
+    font-size: clamp(2.25rem, 10vw, var(--text-8xl));
+    line-height: 1.05;
+    margin: 0;
+    padding: 0 var(--space-4);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: var(--space-10);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-white);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.3);
+    margin-top: var(--space-4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--color-white);
+    animation: scrollDrop 2s infinite ease-in-out;
+  }
+
+  @keyframes scrollDrop {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+
+  /* Intro */
+  .intro {
+    padding: var(--space-32) 0;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .intro-text h2 {
+    font-size: var(--text-6xl);
+    font-style: italic;
+  }
+
+  .lead {
+    font-size: var(--text-xl);
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-6);
+    line-height: 1.5;
+  }
+
+  .mt-6 { margin-top: var(--space-6); }
+
+  .intro-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    border-left: 1px solid var(--color-stone);
+    padding-left: var(--space-10);
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-style: italic;
+    color: var(--color-pine);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+  }
+
+  /* Feature (Bain Nordique) */
+  .feature-section {
+    padding: var(--space-32) 0;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: center;
+  }
+
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/5;
+  }
+
+  .image-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    will-change: transform;
+  }
+
+  .feature-content h2 {
+    font-size: var(--text-6xl);
+    font-style: italic;
+    color: var(--color-pine);
+  }
+
+  /* Amenities */
+  .amenities {
+    padding: var(--space-24) 0;
+  }
+  
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+  
+  .amenity-item {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .amenity-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .amenity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .amenity-content {
+    padding: var(--space-6) var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+  
+  .amenity-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .amenity-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--color-wood);
+    border-radius: 50%;
+    margin-bottom: var(--space-4);
+  }
+  
+  .amenity-item h4 {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-pine);
+    margin-bottom: var(--space-2);
+  }
+  
+  .amenity-item p {
+    font-size: var(--text-sm);
+    margin: 0;
+    color: var(--color-text-light);
+  }
+  
+  .amenities-footer {
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .amenities-note {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .amenities-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .amenities-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Galerie */
+  .gallery {
+    padding: var(--space-32) 0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-6);
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .item-0 { grid-column: 1 / 8; aspect-ratio: 16/10; }
+  .item-1 { grid-column: 8 / 13; aspect-ratio: 4/5; }
+  .item-2 { grid-column: 1 / 6; aspect-ratio: 1/1; }
+  .item-3 { grid-column: 6 / 13; aspect-ratio: 16/9; }
+
+  /* Reviews */
+  .reviews {
+    padding: var(--space-32) 0;
+    text-align: center;
+  }
+
+  .reviews-header {
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-wood);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-6);
+  }
+
+  .reviews-header h2 {
+    font-size: var(--text-5xl);
+    font-style: italic;
+    color: var(--color-pine);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .review-card {
+    background-color: var(--color-white);
+    padding: var(--space-12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .review-stars {
+    margin-bottom: var(--space-6);
+  }
+
+  .review-text {
+    font-size: var(--text-lg);
+    color: var(--color-text-dark);
+    font-style: italic;
+    margin-bottom: var(--space-8);
+  }
+
+  .review-author strong {
+    display: block;
+    color: var(--color-pine);
+    font-size: var(--text-base);
+  }
+
+  .review-author span {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  /* Location / Map */
+  .location {
+    padding: var(--space-24) 0;
+  }
+  
+  .location-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-12);
+  }
+  
+  .location-header h2 {
+    color: var(--color-pine);
+    font-style: italic;
+  }
+  
+  .map-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: var(--space-8);
+  }
+  
+  .map-wrapper iframe {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+  }
+  
+  .map-cta {
+    display: inline-block;
+    margin-top: var(--space-6);
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .location {
+      padding: var(--space-16) 0;
+    }
+    .map-wrapper iframe {
+      min-height: 280px;
+    }
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    padding: var(--space-32) 0;
+  }
+
+  .bg-wood {
+    background-color: var(--color-wood);
+  }
+
+  .cta-inner h2 {
+    font-size: var(--text-6xl);
+    font-style: italic;
+    color: var(--color-white);
+  }
+
+  .cta-inner p {
+    color: rgba(255,255,255,0.8);
+    font-size: var(--text-xl);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .btn-lg {
+    min-height: 52px;
+    padding: var(--space-5) var(--space-10);
+  }
+
+  @media (max-width: 1024px) {
+    .intro-grid, .feature-grid, .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .intro-stats {
+      border-left: none;
+      padding-left: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      border-top: 1px solid var(--color-stone);
+      padding-top: var(--space-8);
+    }
+    
+    .item-0, .item-1, .item-2, .item-3 {
+      grid-column: 1 / -1;
+    }
+    
+    .feature-grid {
+      gap: var(--space-12);
+    }
+    
+    .feature-image {
+      order: -1;
+    }
+    
+    .image-wrapper {
+      aspect-ratio: 16/10;
+    }
+    
+    .image-wrapper img {
+      top: 0;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 400px;
+    }
+    
+    .hero-scroll {
+      bottom: var(--space-6);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+    }
+    
+    .scroll-line {
+      height: 40px;
+    }
+    
+    .intro {
+      padding: var(--space-16) 0;
+    }
+    
+    .intro-stats {
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+    
+    .stat-card {
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-stone);
+    }
+    
+    .stat-card:last-child {
+      border-bottom: none;
+    }
+    
+    .stat-value {
+      font-size: var(--text-4xl);
+    }
+    
+    .intro-text h2, .feature-content h2, .cta-inner h2, .reviews-header h2 {
+      font-size: clamp(2rem, 8vw, var(--text-4xl));
+    }
+    
+    .lead {
+      font-size: var(--text-lg);
+    }
+    
+    .feature-section {
+      padding: var(--space-16) 0;
+    }
+    
+    .feature-content {
+      text-align: center;
+    }
+    
+    .feature-content .eyebrow {
+      display: block;
+    }
+    
+    .gallery {
+      padding: var(--space-16) 0;
+    }
+    
+    .gallery-grid {
+      gap: var(--space-4);
+      grid-template-columns: 1fr;
+    }
+    
+    .item-0, .item-1, .item-2, .item-3 {
+      aspect-ratio: 4/3 !important;
+    }
+    
+    .reviews {
+      padding: var(--space-16) 0;
+    }
+    
+    .reviews-grid {
+      gap: var(--space-6);
+    }
+    
+    .review-card {
+      padding: var(--space-8);
+    }
+    
+    .review-text {
+      font-size: var(--text-base);
+    }
+    
+    .cta {
+      padding: var(--space-16) 0;
+    }
+    
+    .cta-inner p {
+      font-size: var(--text-base);
+    }
+    
+    .cta-inner .btn {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+    }
+    
+    .intro-text .btn {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+      padding: 0 var(--space-2);
+    }
+    
+    .section-header p {
+      font-size: var(--text-base);
+    }
+  }
+
+  /* Désactiver parallax sur mobile (performance) */
+  @media (hover: none) and (pointer: coarse) {
+    .image-wrapper img {
+      top: 0 !important;
+      height: 100% !important;
+      transform: none !important;
+    }
+  }
+</style>
