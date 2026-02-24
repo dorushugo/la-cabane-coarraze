@@ -56,7 +56,7 @@ const reviews = [
     <div class="container">
       <div class="intro-grid">
         <div class="intro-text">
-          <span class="eyebrow">Bienvenue à La Cabane</span>
+          <span class="eyebrow">Bienvenue à La Cabane de Sandro</span>
           <h2>L'évasion par nature</h2>
           <p class="lead">
             Maisonnette en bois de 22 m², idéale pour un séjour en couple. Nichée dans un cadre calme et verdoyant à Coarraze, entre Pau, Lourdes et les montagnes des Pyrénées-Atlantiques. Intérieur moderne et parfaitement équipé, terrasse de 8 m² et terrain privatif de 1200 m².
@@ -208,7 +208,7 @@ const reviews = [
       <div class="reviews-header" data-reveal>
         <div class="badge">Exceptionnel</div>
         <h2>Ce que disent nos invités</h2>
-        <p class="lead">Évaluée par les clients après leur séjour à La Cabane - Coarraze. 3 expériences vécues.</p>
+        <p class="lead">Évaluée par les clients après leur séjour à La Cabane de Sandro. 3 expériences vécues.</p>
       </div>
       
       <div class="reviews-grid" data-reveal-stagger>
@@ -247,7 +247,7 @@ const reviews = [
           height="400"
           style="border: 0; border-radius: var(--radius-lg);"
           loading="lazy"
-          title="La Cabane - Coarraze sur la carte"
+          title="La Cabane de Sandro sur la carte"
         ></iframe>
         <a href="https://www.google.com/maps/search/?api=1&query=4+Chem.+d'Escaraude,+64800+Coarraze,+France" target="_blank" rel="noopener noreferrer" class="map-cta btn btn-primary interactive-element">
           Voir sur Google Maps → 
@@ -256,19 +256,73 @@ const reviews = [
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA & Contact -->
   <section id="reservation" class="cta bg-wood text-white" data-reveal>
     <div class="container">
-      <div class="cta-inner">
-        <h2>Prêt pour l'évasion ?</h2>
-        <p>Réservez dès maintenant votre séjour à La Cabane sur Booking.com.</p>
-        <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white interactive-element mt-6">Réserver sur Booking.com</a>
+      <div class="cta-grid">
+        <div class="cta-content">
+          <h2>Prêt pour l'évasion ?</h2>
+          <p class="lead">Réservez dès maintenant votre séjour à La Cabane de Sandro directement sur Booking.com, ou contactez-nous pour toute demande de réservation en direct.</p>
+          <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white interactive-element mt-6">Réserver sur Booking.com</a>
+        </div>
+        
+        <div class="cta-form-wrapper">
+          <h3>Contact direct</h3>
+          <div class="form-success" id="form-success" hidden>
+            <svg class="form-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div>
+              <strong>Message envoyé !</strong>
+              <p>Vous serez recontacté rapidement.</p>
+            </div>
+          </div>
+          <form action="https://formsubmit.co/fabrice.zen06@gmail.com" method="POST" class="contact-form" id="contact-form">
+            <input type="hidden" name="_subject" value="Nouvelle demande de réservation pour La Cabane de Sandro !">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value={`${Astro.url.origin}${Astro.url.pathname}?envoye=1#reservation`}>
+            <input type="text" name="_honey" style="display:none">
+            
+            <div class="form-group">
+              <label for="name">Nom / Prénom</label>
+              <input type="text" id="name" name="name" required placeholder="Saisissez votre nom">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Saisissez votre adresse email">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Dates souhaitées, questions, etc."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary interactive-element">Envoyer ma demande</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
   
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (new URLSearchParams(window.location.search).get('envoye') === '1') {
+      const successEl = document.getElementById('form-success');
+      const formEl = document.getElementById('contact-form');
+      if (successEl) {
+        successEl.hidden = false;
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (formEl) formEl.hidden = true;
+    }
+  });
+</script>
 
 <style>
   /* Hero */
@@ -700,9 +754,8 @@ const reviews = [
     }
   }
 
-  /* CTA */
+  /* CTA & Contact */
   .cta {
-    text-align: center;
     padding: var(--space-32) 0;
   }
 
@@ -710,17 +763,132 @@ const reviews = [
     background-color: var(--color-wood);
   }
 
-  .cta-inner h2 {
-    font-size: var(--text-6xl);
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--text-5xl);
     font-style: italic;
     color: var(--color-white);
   }
 
-  .cta-inner p {
-    color: rgba(255,255,255,0.8);
-    font-size: var(--text-xl);
-    max-width: 600px;
-    margin: 0 auto;
+  .cta-content .lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-lg);
+  }
+
+  .cta-form-wrapper {
+    background: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-dark);
+  }
+
+  .cta-form-wrapper h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+    color: var(--color-pine);
+  }
+
+  .form-success {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: rgba(44, 62, 53, 0.08);
+    border: 2px solid var(--color-pine);
+    border-radius: var(--radius-md);
+    color: var(--color-pine);
+    margin-bottom: var(--space-6);
+    animation: formSuccessFade 0.5s ease-out;
+  }
+
+  .form-success-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--color-pine);
+  }
+
+  .form-success strong {
+    display: block;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+  }
+
+  .form-success p {
+    margin: 0;
+    font-size: var(--text-sm);
+    opacity: 0.9;
+  }
+
+  @keyframes formSuccessFade {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .form-group label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-light);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    transition: border-color var(--transition-fast);
+    background: var(--color-off-white);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-wood);
+  }
+
+  .contact-form .btn {
+    margin-top: var(--space-2);
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    .cta-content {
+      text-align: center;
+    }
   }
 
   .btn-lg {
