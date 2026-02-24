@@ -4,14 +4,19 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
 const { 
   title, 
-  description = "La Cabane de Sandro : maisonnette en bois 22 m², bain nordique chauffé au bois, terrain 1200 m². Entre Pau, Lourdes et les Pyrénées. Idéal pour un séjour en couple.",
+  description = "Gîte de charme à Coarraze (Pyrénées-Atlantiques) : La Cabane de Sandro. Maisonnette en bois 22 m², bain nordique chauffé au bois, terrain 1200 m². Location gîte Coarraze entre Pau et Lourdes. Idéal week-end en couple.",
+  image = "/images/762533986.jpg",
 } = Astro.props;
 
-const fullTitle = title === "Accueil" ? "La Cabane de Sandro | Gîte de charme à Coarraze" : `${title} | La Cabane de Sandro`;
+const fullTitle = title === "Accueil" ? "La Cabane de Sandro | Gîte Coarraze - Location Pyrénées" : `${title} | La Cabane de Sandro`;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
 <!DOCTYPE html>
@@ -22,14 +27,60 @@ const fullTitle = title === "Accueil" ? "La Cabane de Sandro | Gîte de charme �
   <meta name="generator" content={Astro.generator} />
   
   <title>{fullTitle}</title>
-  <meta name="title" content={fullTitle} />
   <meta name="description" content={description} />
+  <meta name="keywords" content="gîte Coarraze, location Coarraze, gîte Pyrénées-Atlantiques, gîte de charme Coarraze, bain nordique Pyrénées, La Cabane de Sandro, week-end Pau Lourdes, gîte couple Béarn" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={imageUrl} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="La Cabane de Sandro" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={imageUrl} />
   
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
+  {Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "La Cabane de Sandro",
+      "description": "Gîte de charme à Coarraze, maisonnette en bois 22 m² avec bain nordique chauffé au bois. Terrain 1200 m², idéal pour un séjour en couple aux portes des Pyrénées.",
+      "url": canonicalUrl,
+      "image": imageUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4 Chem. d'Escaraude",
+        "addressLocality": "Coarraze",
+        "postalCode": "64800",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.1736,
+        "longitude": -0.2322
+      },
+      "priceRange": "€",
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Bain nordique", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true }
+      ]
+    })} />
+  )}
 </head>
 <body>
   <slot name="cursor" />
