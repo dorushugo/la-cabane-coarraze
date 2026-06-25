@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": "Activités autour de Coarraze - Béarn Pyrénées",
+  "description": "Découvrez les activités et visites autour de Coarraze dans le Béarn : grottes de Bétharram, randonnées, Lourdes, Pau, sports de plein air.",
+  "url": "https://www.cabane-coarraze.fr/activites-coarraze-bearn/",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.1736,
+    "longitude": -0.2322
+  },
+  "includesAttraction": [
+    { "@type": "TouristAttraction", "name": "Grottes de Bétharram", "distance": "8 km" },
+    { "@type": "TouristAttraction", "name": "Sanctuaires de Lourdes", "distance": "21 km" },
+    { "@type": "TouristAttraction", "name": "Château de Pau", "distance": "25 km" }
+  ]
+};
+---
+
+<BaseLayout 
+  title="Activités et Visites autour de Coarraze — Que faire dans le Béarn"
+  description="Que faire à Coarraze et dans le Béarn ? Grottes de Bétharram, randonnées Pyrénées, Lourdes, Pau, canoë, VTT. Toutes les activités près de notre gîte La Cabane de Sandro."
+  keywords="activités Coarraze, que faire Coarraze, visiter Béarn, grottes Bétharram, randonnée Pyrénées Coarraze, tourisme Béarn, loisirs Pyrénées-Atlantiques, visite Lourdes, visite Pau, activités nature 64"
+  schema={schema}
+>
+  <Header slot="header" />
+  
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/762534377.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> <span>/</span> <span>Activités</span>
+      </nav>
+      <h1>Activités et visites autour de Coarraze</h1>
+      <p class="page-hero-subtitle">Que faire dans le Béarn et les Pyrénées</p>
+    </div>
+  </section>
+
+  <section class="content-section bg-off-white">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <h2>Que faire autour de Coarraze ?</h2>
+          <p>
+            Coarraze est idéalement situé au <strong>carrefour du Béarn et des Pyrénées</strong>. Que vous soyez amateur de nature, de culture ou de sensations fortes, la région offre une multitude d'activités à quelques minutes de notre gîte.
+          </p>
+
+          <h3>Sites incontournables</h3>
+          
+          <div class="activity-card">
+            <h4>Grottes de Bétharram — 8 km</h4>
+            <p>
+              Les <strong>grottes de Bétharram</strong> figurent parmi les plus belles d'Europe. Visite en barque souterraine et petit train sur 2,8 km. Un site exceptionnel accessible en 10 minutes depuis La Cabane de Sandro.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <h4>Sanctuaires de Lourdes — 21 km</h4>
+            <p>
+              Le célèbre lieu de pèlerinage, mais aussi le funiculaire du <strong>Pic du Jer</strong> pour un panorama à 360° sur les Pyrénées. Château Fort et musée pyrénéen pour les amateurs d'histoire.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <h4>Pau et son château — 25 km</h4>
+            <p>
+              Le <strong>château de Pau</strong> (berceau d'Henri IV), le <strong>boulevard des Pyrénées</strong> avec sa vue spectaculaire sur la chaîne, et le centre-ville animé avec ses restaurants et marchés.
+            </p>
+          </div>
+
+          <h3>Sports et nature</h3>
+
+          <div class="activity-card">
+            <h4>Randonnées</h4>
+            <p>
+              Depuis Coarraze, accédez aux sentiers du piémont pyrénéen. Du <strong>Col d'Aubisque</strong> aux lacs d'altitude, les possibilités sont infinies. Niveau débutant à confirmé.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <h4>Canoë-kayak sur le Gave</h4>
+            <p>
+              Descendez le <strong>Gave de Pau</strong> en canoë ou kayak. Plusieurs bases nautiques proposent des parcours de 1h à la journée, adaptés aux débutants comme aux sportifs.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <h4>VTT et cyclisme</h4>
+            <p>
+              Routes de cols mythiques (Aubisque, Tourmalet à 70 km) pour les cyclistes, et chemins forestiers pour le VTT. La région est un paradis pour les deux-roues.
+            </p>
+          </div>
+
+          <h3>Gastronomie béarnaise</h3>
+          <p>
+            Le Béarn est une terre de gastronomie : <strong>poule au pot</strong>, <strong>garbure</strong>, fromages de brebis, <strong>jurançon</strong> et <strong>madiran</strong>. Les marchés locaux (Nay, Pau, Lourdes) proposent des produits fermiers d'exception. Ne manquez pas les confits de canard et le gâteau à la broche !
+          </p>
+
+          <h3>En hiver</h3>
+          <p>
+            Les stations de ski sont à portée de main : <strong>Gourette</strong> (55 km), <strong>Cauterets</strong> (60 km), et le <strong>Tourmalet</strong> pour les amateurs de poudreuse. Après une journée de ski, retour au bain nordique pour une récupération parfaite.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver votre séjour</a>
+            <a href="/gite-coarraze/" class="btn btn-outline">Découvrir le gîte</a>
+          </div>
+        </div>
+
+        <aside class="content-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-body">
+              <h4>Distances depuis le gîte</h4>
+              <dl>
+                <dt>Grottes Bétharram</dt>
+                <dd>8 km — 10 min</dd>
+                <dt>Lourdes</dt>
+                <dd>21 km — 25 min</dd>
+                <dt>Pau</dt>
+                <dd>25 km — 30 min</dd>
+                <dt>Aéroport TLP</dt>
+                <dd>23 km — 25 min</dd>
+                <dt>Gourette (ski)</dt>
+                <dd>55 km — 1h</dd>
+                <dt>Col d'Aubisque</dt>
+                <dd>45 km — 50 min</dd>
+                <dt>Gave de Pau</dt>
+                <dd>3 km — 5 min</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="sidebar-links">
+            <h4>Découvrir aussi</h4>
+            <a href="/gite-coarraze/">Le gîte à Coarraze</a>
+            <a href="/bain-nordique-bearn/">Le bain nordique</a>
+            <a href="/weekend-romantique-pyrenees/">Week-end romantique</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-12);
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+  }
+
+  .page-hero-content h1 {
+    font-size: clamp(2rem, 6vw, var(--text-6xl));
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .breadcrumb a { color: var(--color-wood-light); }
+  .breadcrumb span { margin: 0 var(--space-2); }
+
+  .content-section { padding: var(--space-20) 0; }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .content-main h2 {
+    font-size: var(--text-4xl);
+    color: var(--color-pine);
+    font-style: italic;
+    margin-bottom: var(--space-6);
+  }
+
+  .content-main h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-pine);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .content-main p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-dark);
+  }
+
+  .activity-card {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .activity-card h4 {
+    color: var(--color-pine);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
+  }
+
+  .activity-card p {
+    font-size: var(--text-base) !important;
+    margin: 0 !important;
+    color: var(--color-text-light);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .sidebar-card-body {
+    padding: var(--space-6);
+  }
+
+  .sidebar-card-body h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-card-body dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .sidebar-card-body dt { font-weight: 600; color: var(--color-text-dark); }
+  .sidebar-card-body dd { color: var(--color-text-light); margin: 0; }
+
+  .sidebar-links {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-links h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-links a {
+    display: block;
+    padding: var(--space-3) 0;
+    color: var(--color-wood);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    text-decoration: none;
+  }
+
+  .sidebar-links a:hover { color: var(--color-pine); }
+
+  @media (max-width: 1024px) {
+    .content-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero { height: 40vh; min-height: 280px; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons .btn { width: 100%; text-align: center; }
+  }
+</style>

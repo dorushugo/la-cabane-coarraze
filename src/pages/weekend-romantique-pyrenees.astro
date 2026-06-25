@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "La Cabane de Sandro - Week-end Romantique Pyrénées",
+  "description": "Week-end romantique en couple dans les Pyrénées. Gîte de charme avec bain nordique privatif à Coarraze, entre Pau et Lourdes.",
+  "url": "https://www.cabane-coarraze.fr/weekend-romantique-pyrenees/",
+  "image": "https://www.cabane-coarraze.fr/images/762534393.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coarraze",
+    "postalCode": "64800",
+    "addressRegion": "Pyrénées-Atlantiques",
+    "addressCountry": "FR"
+  }
+};
+---
+
+<BaseLayout 
+  title="Week-end Romantique dans les Pyrénées — Séjour Couple"
+  description="Offrez-vous un week-end romantique dans les Pyrénées : gîte de charme avec bain nordique privatif à Coarraze. Séjour en amoureux entre Pau et Lourdes, cadre nature et calme absolu."
+  keywords="week-end romantique Pyrénées, séjour couple Pyrénées, week-end amoureux Béarn, escapade romantique 64, nuit insolite Pyrénées, séjour romantique bain nordique, week-end couple Pau Lourdes, cadeau couple Pyrénées, nuit cocooning Béarn"
+  image="/images/762534393.jpg"
+  schema={schema}
+>
+  <Header slot="header" />
+  
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/762534393.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> <span>/</span> <span>Week-end Romantique</span>
+      </nav>
+      <h1>Week-end romantique dans les Pyrénées</h1>
+      <p class="page-hero-subtitle">Un séjour en amoureux au cœur du Béarn</p>
+    </div>
+  </section>
+
+  <section class="content-section bg-off-white">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <h2>Votre escapade romantique au pied des Pyrénées</h2>
+          <p>
+            Envie de vous retrouver en couple, loin du quotidien ? La Cabane de Sandro est le lieu idéal pour un <strong>week-end romantique dans les Pyrénées</strong>. Notre gîte de charme à <strong>Coarraze</strong>, conçu exclusivement pour les couples, vous offre intimité, nature et détente.
+          </p>
+
+          <h3>Pourquoi choisir La Cabane pour un séjour en amoureux ?</h3>
+          <ul class="features-list">
+            <li><strong>Bain nordique privatif</strong> — Moment magique à deux sous les étoiles</li>
+            <li><strong>Aucun vis-à-vis</strong> — 1200 m² de terrain pour une intimité totale</li>
+            <li><strong>Déconnexion</strong> — Pas de TV, pour se recentrer sur l'essentiel</li>
+            <li><strong>Cadre naturel</strong> — Au pied des Pyrénées, entre montagnes et vallées</li>
+            <li><strong>Confort moderne</strong> — Literie haut de gamme, douche à l'italienne</li>
+            <li><strong>Terrasse privée</strong> — Petits-déjeuners en plein air, 8 m² de bonheur</li>
+          </ul>
+
+          <h3>Idées pour votre week-end en couple</h3>
+          <p>
+            Un <strong>séjour romantique dans les Pyrénées-Atlantiques</strong> ne se résume pas au gîte. Voici des idées pour rendre votre escapade inoubliable :
+          </p>
+
+          <div class="idea-cards">
+            <div class="idea-card">
+              <h4>Journée détente</h4>
+              <p>Grasse matinée, petit-déjeuner sur la terrasse, balade dans les sentiers autour de Coarraze, bain nordique au coucher du soleil.</p>
+            </div>
+            <div class="idea-card">
+              <h4>Journée aventure</h4>
+              <p>Visite des grottes de Bétharram (8 km), randonnée au Col d'Aubisque, dîner dans un restaurant béarnais typique.</p>
+            </div>
+            <div class="idea-card">
+              <h4>Journée culture</h4>
+              <p>Château de Pau et boulevard des Pyrénées le matin, marché local l'après-midi, soirée sous les étoiles au bain nordique.</p>
+            </div>
+          </div>
+
+          <h3>Idéal pour un cadeau</h3>
+          <p>
+            Offrir un <strong>week-end romantique dans les Pyrénées</strong> est le cadeau parfait pour un anniversaire, la Saint-Valentin, ou simplement pour surprendre votre moitié. Contactez-nous pour organiser une attention particulière à l'arrivée.
+          </p>
+
+          <h3>Quand venir ?</h3>
+          <p>
+            La Cabane de Sandro vous accueille <strong>toute l'année</strong>. Chaque saison a son charme : le bain nordique sous la neige en hiver, les randonnées au printemps, les soirées étoilées en été, les couleurs d'automne dans le Béarn.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver votre week-end</a>
+            <a href="/#reservation" class="btn btn-outline">Nous contacter</a>
+          </div>
+        </div>
+
+        <aside class="content-sidebar">
+          <div class="sidebar-card">
+            <img src="/images/762534393.jpg" alt="Chambre romantique La Cabane de Sandro" loading="lazy" />
+            <div class="sidebar-card-body">
+              <h4>Séjour romantique</h4>
+              <dl>
+                <dt>Durée idéale</dt>
+                <dd>2 à 3 nuits</dd>
+                <dt>Capacité</dt>
+                <dd>2 personnes</dd>
+                <dt>Bain nordique</dt>
+                <dd>Sur réservation</dd>
+                <dt>Période</dt>
+                <dd>Toute l'année</dd>
+                <dt>Séjour min.</dt>
+                <dd>2 nuits</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="sidebar-links">
+            <h4>Découvrir aussi</h4>
+            <a href="/gite-coarraze/">Le gîte en détail</a>
+            <a href="/bain-nordique-bearn/">Le bain nordique</a>
+            <a href="/activites-coarraze-bearn/">Activités autour</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-12);
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+  }
+
+  .page-hero-content h1 {
+    font-size: clamp(2rem, 6vw, var(--text-6xl));
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .breadcrumb a { color: var(--color-wood-light); }
+  .breadcrumb span { margin: 0 var(--space-2); }
+
+  .content-section { padding: var(--space-20) 0; }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .content-main h2 {
+    font-size: var(--text-4xl);
+    color: var(--color-pine);
+    font-style: italic;
+    margin-bottom: var(--space-6);
+  }
+
+  .content-main h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-pine);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .content-main p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-dark);
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+  }
+
+  .features-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: var(--text-lg);
+    color: var(--color-text-dark);
+  }
+
+  .features-list li::before {
+    content: "✓ ";
+    color: var(--color-wood);
+    font-weight: bold;
+  }
+
+  .idea-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .idea-card {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .idea-card h4 {
+    color: var(--color-pine);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-lg);
+  }
+
+  .idea-card p {
+    font-size: var(--text-base) !important;
+    margin: 0 !important;
+    color: var(--color-text-light);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .sidebar-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .sidebar-card-body {
+    padding: var(--space-6);
+  }
+
+  .sidebar-card-body h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-card-body dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .sidebar-card-body dt { font-weight: 600; color: var(--color-text-dark); }
+  .sidebar-card-body dd { color: var(--color-text-light); margin: 0; }
+
+  .sidebar-links {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-links h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-links a {
+    display: block;
+    padding: var(--space-3) 0;
+    color: var(--color-wood);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    text-decoration: none;
+  }
+
+  .sidebar-links a:hover { color: var(--color-pine); }
+
+  @media (max-width: 1024px) {
+    .content-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero { height: 40vh; min-height: 280px; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons .btn { width: 100%; text-align: center; }
+  }
+</style>

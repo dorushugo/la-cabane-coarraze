@@ -1,17 +1,40 @@
 ---
 const isHomePage = Astro.url.pathname === '/';
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/gite-coarraze/', label: 'Le Gîte' },
+  { href: '/bain-nordique-bearn/', label: 'Bain Nordique' },
+  { href: '/weekend-romantique-pyrenees/', label: 'Week-end Couple' },
+  { href: '/activites-coarraze-bearn/', label: 'Activités' },
+];
 ---
 
 <header class:list={['header', { 'header--over-hero': isHomePage }]} id="header">
-  <nav class="header-nav">
+  <nav class="header-nav" aria-label="Navigation principale">
     <div class="header-nav-inner">
       <a href="/" class="logo-block" aria-label="La Cabane de Sandro - Accueil">
         <span class="logo-text">La Cabane</span>
         <span class="logo-tagline">de Sandro</span>
       </a>
       
+      <ul class="nav-links" id="nav-links">
+        {navLinks.map(link => (
+          <li>
+            <a href={link.href} class:list={['nav-link', { active: currentPath === link.href }]}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
       <div class="nav-right">
         <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Réserver</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -82,6 +105,78 @@ const isHomePage = Astro.url.pathname === '/';
     margin: 0 auto;
     min-height: 52px;
   }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-pine);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--color-wood);
+    background-color: rgba(0,0,0,0.04);
+  }
+
+  .header--over-hero .nav-link {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .header--over-hero .nav-link:hover,
+  .header--over-hero .nav-link.active {
+    color: var(--color-white);
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .header.scrolled .nav-link {
+    color: var(--color-pine);
+  }
+
+  .header.scrolled .nav-link:hover,
+  .header.scrolled .nav-link.active {
+    color: var(--color-wood);
+    background-color: rgba(0,0,0,0.04);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    margin-left: var(--space-3);
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-pine);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .header--over-hero .nav-toggle span {
+    background: var(--color-white);
+  }
+
+  .header.scrolled .nav-toggle span {
+    background: var(--color-pine);
+  }
   
   .header--over-hero .header-nav-inner {
     padding-top: var(--space-2);
@@ -130,11 +225,44 @@ const isHomePage = Astro.url.pathname === '/';
       padding: var(--space-4) var(--container-padding-sm);
     }
     .logo-text { font-size: var(--text-xl); }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--color-off-white);
+      padding: var(--space-4) var(--container-padding-sm);
+      box-shadow: var(--shadow-md);
+      gap: 0;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: var(--space-3) var(--space-4);
+      color: var(--color-pine) !important;
+    }
+
+    .nav-right .btn {
+      font-size: 0.7rem;
+      padding: var(--space-2) var(--space-4);
+    }
   }
 </style>
 
 <script>
   const header = document.getElementById('header');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
   
   function updateHeaderScroll() {
     if (!header) return;
@@ -146,6 +274,13 @@ const isHomePage = Astro.url.pathname === '/';
     } else if (!isOverHero) {
       header.classList.add('scrolled');
     }
+  }
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
   }
   
   window.addEventListener('scroll', updateHeaderScroll, { passive: true });

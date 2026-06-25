@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Bain Nordique - La Cabane de Sandro",
+  "description": "Bain nordique privatif chauffé au bois dans un gîte de charme à Coarraze, Béarn. Expérience unique de détente en pleine nature.",
+  "url": "https://www.cabane-coarraze.fr/bain-nordique-bearn/",
+  "image": "https://www.cabane-coarraze.fr/images/762534381.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coarraze",
+    "postalCode": "64800",
+    "addressRegion": "Pyrénées-Atlantiques",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.1736,
+    "longitude": -0.2322
+  }
+};
+---
+
+<BaseLayout 
+  title="Bain Nordique privatif dans le Béarn — Gîte avec Hot Tub"
+  description="Profitez d'un bain nordique privatif chauffé au bois dans notre gîte à Coarraze (Béarn). Détente sous les étoiles au pied des Pyrénées. Hébergement avec bain scandinave en Pyrénées-Atlantiques."
+  keywords="bain nordique Béarn, bain nordique Pyrénées, gîte bain nordique, hébergement bain nordique 64, hot tub Pyrénées, bain scandinave Béarn, bain chauffé bois Coarraze, spa privatif Béarn, jacuzzi nature Pyrénées"
+  image="/images/762534381.jpg"
+  schema={schema}
+>
+  <Header slot="header" />
+  
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/762534381.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> <span>/</span> <span>Bain Nordique</span>
+      </nav>
+      <h1>Bain nordique privatif dans le Béarn</h1>
+      <p class="page-hero-subtitle">Une expérience unique au pied des Pyrénées</p>
+    </div>
+  </section>
+
+  <section class="content-section bg-off-white">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <h2>Un bain nordique chauffé au bois en pleine nature</h2>
+          <p>
+            À La Cabane de Sandro, nous vous proposons une expérience rare dans le <strong>Béarn</strong> : un <strong>bain nordique privatif</strong>, chauffé au feu de bois, au milieu d'un terrain de 1200 m² entouré de verdure. Imaginez-vous plongé dans une eau à 38-40°C, sous le ciel étoilé des <strong>Pyrénées</strong>, avec pour seul bruit le crépitement du bois.
+          </p>
+
+          <h3>Qu'est-ce qu'un bain nordique ?</h3>
+          <p>
+            Originaire de Scandinavie, le bain nordique (ou <em>hot tub</em>) est un bassin en bois chauffé par un poêle à bois immergé ou extérieur. Contrairement à un jacuzzi classique, il offre une expérience authentique et naturelle, sans électricité ni produits chimiques. L'eau est chauffée progressivement par la combustion du bois, atteignant la température idéale en 3 à 4 heures.
+          </p>
+
+          <h3>Votre bain nordique à Coarraze</h3>
+          <p>
+            Notre bain nordique est installé dans le jardin privatif, offrant une intimité totale. Les caractéristiques :
+          </p>
+          <ul class="features-list">
+            <li><strong>Chauffage au bois</strong> — Authenticité et crépitement du feu</li>
+            <li><strong>Capacité 2 personnes</strong> — Intimité garantie pour les couples</li>
+            <li><strong>Terrain privatif</strong> — Aucun vis-à-vis, immersion totale dans la nature</li>
+            <li><strong>Vue sur les Pyrénées</strong> — Cadre exceptionnel en toutes saisons</li>
+            <li><strong>Disponible toute l'année</strong> — Encore plus magique en hiver</li>
+          </ul>
+
+          <h3>Informations pratiques</h3>
+          <p>
+            Le bain nordique est proposé en <strong>supplément</strong> et nécessite une réservation préalable (24 à 48h d'anticipation pour la chauffe). N'hésitez pas à nous prévenir lors de votre réservation pour en profiter dès votre arrivée.
+          </p>
+
+          <h3>Pourquoi choisir un hébergement avec bain nordique ?</h3>
+          <p>
+            Un séjour avec bain nordique dans le Béarn, c'est l'alliance parfaite entre aventure et détente. Après une journée de randonnée dans les <strong>Pyrénées</strong>, de visite des <strong>grottes de Bétharram</strong> ou de balade à <strong>Lourdes</strong>, rien de tel qu'un bain chaud en plein air pour se ressourcer.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver avec bain nordique</a>
+            <a href="/gite-coarraze/" class="btn btn-outline">Découvrir le gîte</a>
+          </div>
+        </div>
+
+        <aside class="content-sidebar">
+          <div class="sidebar-card">
+            <img src="/images/762534381.jpg" alt="Bain nordique privatif à Coarraze - La Cabane de Sandro" loading="lazy" />
+            <div class="sidebar-card-body">
+              <h4>Le bain nordique</h4>
+              <dl>
+                <dt>Type</dt>
+                <dd>Bain nordique bois</dd>
+                <dt>Chauffage</dt>
+                <dd>Poêle à bois</dd>
+                <dt>Capacité</dt>
+                <dd>2 personnes</dd>
+                <dt>Température</dt>
+                <dd>38-40°C</dd>
+                <dt>Temps de chauffe</dt>
+                <dd>3-4 heures</dd>
+                <dt>Réservation</dt>
+                <dd>24-48h à l'avance</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="sidebar-links">
+            <h4>Découvrir aussi</h4>
+            <a href="/gite-coarraze/">Le gîte à Coarraze</a>
+            <a href="/weekend-romantique-pyrenees/">Week-end romantique</a>
+            <a href="/activites-coarraze-bearn/">Activités autour</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-12);
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+  }
+
+  .page-hero-content h1 {
+    font-size: clamp(2rem, 6vw, var(--text-6xl));
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .breadcrumb a { color: var(--color-wood-light); }
+  .breadcrumb span { margin: 0 var(--space-2); }
+
+  .content-section { padding: var(--space-20) 0; }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .content-main h2 {
+    font-size: var(--text-4xl);
+    color: var(--color-pine);
+    font-style: italic;
+    margin-bottom: var(--space-6);
+  }
+
+  .content-main h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-pine);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .content-main p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-dark);
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+  }
+
+  .features-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: var(--text-lg);
+    color: var(--color-text-dark);
+  }
+
+  .features-list li::before {
+    content: "✓ ";
+    color: var(--color-wood);
+    font-weight: bold;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .sidebar-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .sidebar-card-body {
+    padding: var(--space-6);
+  }
+
+  .sidebar-card-body h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-card-body dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .sidebar-card-body dt { font-weight: 600; color: var(--color-text-dark); }
+  .sidebar-card-body dd { color: var(--color-text-light); margin: 0; }
+
+  .sidebar-links {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-links h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-links a {
+    display: block;
+    padding: var(--space-3) 0;
+    color: var(--color-wood);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    text-decoration: none;
+  }
+
+  .sidebar-links a:hover { color: var(--color-pine); }
+
+  @media (max-width: 1024px) {
+    .content-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero { height: 40vh; min-height: 280px; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons .btn { width: 100%; text-align: center; }
+  }
+</style>

@@ -13,6 +13,16 @@ const currentYear = new Date().getFullYear();
         </p>
       </div>
       
+      <div class="footer-nav">
+        <h4>Découvrir</h4>
+        <ul>
+          <li><a href="/gite-coarraze/">Le gîte à Coarraze</a></li>
+          <li><a href="/bain-nordique-bearn/">Bain nordique</a></li>
+          <li><a href="/weekend-romantique-pyrenees/">Week-end romantique</a></li>
+          <li><a href="/activites-coarraze-bearn/">Activités et visites</a></li>
+        </ul>
+      </div>
+
       <div class="footer-contact">
         <h4>Contact</h4>
         <address>
@@ -20,11 +30,12 @@ const currentYear = new Date().getFullYear();
           <p>64800 Coarraze, France</p>
         </address>
         <p class="mt-4"><a href="https://www.google.com/maps/search/?api=1&query=4+Chem.+d'Escaraude,+64800+Coarraze,+France" target="_blank" rel="noopener noreferrer">Voir la carte</a></p>
+        <p class="mt-4"><a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer">Réserver sur Booking.com</a></p>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; {currentYear} La Cabane de Sandro. Tous droits réservés.</p>
+      <p>&copy; {currentYear} La Cabane de Sandro. Tous droits réservés. | <a href="/gite-coarraze/">Gîte Coarraze</a> | <a href="/bain-nordique-bearn/">Bain nordique Béarn</a></p>
     </div>
   </div>
 </footer>
@@ -36,7 +47,7 @@ const currentYear = new Date().getFullYear();
   
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: var(--space-16);
     margin-bottom: var(--space-16);
   }
@@ -86,6 +97,32 @@ const currentYear = new Date().getFullYear();
   .footer-contact a:hover {
     color: var(--color-white);
   }
+
+  .footer-nav h4 {
+    font-size: var(--text-xl);
+    color: var(--color-white);
+    margin-bottom: var(--space-6);
+  }
+
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-nav li {
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-wood-light);
+  }
   
   .mt-4 { margin-top: var(--space-4); }
   
@@ -95,6 +132,15 @@ const currentYear = new Date().getFullYear();
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     font-size: var(--text-sm);
+  }
+
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--color-wood-light);
   }
   
   @media (max-width: 768px) {

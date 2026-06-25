@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "La Cabane de Sandro - Gîte à Coarraze",
+  "description": "Gîte de charme à Coarraze dans les Pyrénées-Atlantiques. Maisonnette en bois 22 m² avec bain nordique, terrain privatif 1200 m². Idéal séjour en couple.",
+  "url": "https://www.cabane-coarraze.fr/gite-coarraze/",
+  "image": "https://www.cabane-coarraze.fr/images/762533986.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4 Chem. d'Escaraude",
+    "addressLocality": "Coarraze",
+    "postalCode": "64800",
+    "addressRegion": "Pyrénées-Atlantiques",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.1736,
+    "longitude": -0.2322
+  },
+  "priceRange": "€€",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Bain nordique privatif", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "WiFi gratuit", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parking privé", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Climatisation", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Cuisine équipée", "value": true }
+  ]
+};
+---
+
+<BaseLayout 
+  title="Gîte à Coarraze — Location Vacances Pyrénées-Atlantiques"
+  description="Louez notre gîte de charme à Coarraze (64800), entre Pau et Lourdes. Maisonnette en bois 22 m², bain nordique privatif, terrain 1200 m². Idéal pour un week-end en couple dans les Pyrénées-Atlantiques."
+  keywords="gîte Coarraze, location vacances Coarraze, gîte 64800, hébergement Coarraze, location Coarraze Pyrénées, gîte Pyrénées-Atlantiques, chambre d'hôte Coarraze, logement Coarraze, gîte entre Pau et Lourdes, gîte Béarn"
+  schema={schema}
+>
+  <Header slot="header" />
+  
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/762533986.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> <span>/</span> <span>Gîte Coarraze</span>
+      </nav>
+      <h1>Gîte de charme à Coarraze</h1>
+      <p class="page-hero-subtitle">Votre location vacances dans les Pyrénées-Atlantiques</p>
+    </div>
+  </section>
+
+  <section class="content-section bg-off-white">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <h2>La Cabane de Sandro : votre gîte à Coarraze (64)</h2>
+          <p>
+            Située au cœur du <strong>Béarn</strong>, à <strong>Coarraze</strong> dans les <strong>Pyrénées-Atlantiques (64800)</strong>, La Cabane de Sandro est une maisonnette en bois de 22 m² pensée pour les couples en quête de calme et de nature. Entre <strong>Pau</strong> (25 km) et <strong>Lourdes</strong> (21 km), notre gîte offre un cadre idéal pour explorer les Pyrénées tout en profitant d'un hébergement de charme.
+          </p>
+
+          <h3>Un hébergement unique à Coarraze</h3>
+          <p>
+            Notre gîte se distingue par son <strong>bain nordique privatif</strong> chauffé au bois, son terrain de 1200 m² et son ambiance chaleureuse. Construit entièrement en bois, le logement dispose d'une chambre confortable, d'une salle de bains avec douche à l'italienne, et d'une cuisine entièrement équipée.
+          </p>
+
+          <h3>Pourquoi choisir notre gîte à Coarraze ?</h3>
+          <ul class="features-list">
+            <li><strong>Bain nordique privatif</strong> — Détente absolue sous les étoiles, chauffé au feu de bois</li>
+            <li><strong>Emplacement stratégique</strong> — Entre Pau, Lourdes et les montagnes pyrénéennes</li>
+            <li><strong>Terrain de 1200 m²</strong> — Calme et verdure garantis, aucun vis-à-vis</li>
+            <li><strong>Équipements modernes</strong> — WiFi, climatisation réversible, cuisine équipée</li>
+            <li><strong>Parking privé gratuit</strong> — Stationnement sécurisé sur place</li>
+            <li><strong>Déconnexion totale</strong> — Pas de télévision, favorisant le repos et la nature</li>
+          </ul>
+
+          <h3>Situation géographique à Coarraze</h3>
+          <p>
+            Le village de <strong>Coarraze</strong>, au pied des Pyrénées, est idéalement situé pour rayonner dans tout le Béarn et le Bigorre. Depuis notre gîte, vous accédez facilement à :
+          </p>
+          <ul class="location-list">
+            <li><strong>Grottes de Bétharram</strong> — 8 km (10 min)</li>
+            <li><strong>Lourdes</strong> (sanctuaires, funiculaire du Pic du Jer) — 21 km</li>
+            <li><strong>Pau</strong> (château, boulevard des Pyrénées) — 25 km</li>
+            <li><strong>Col d'Aubisque / stations de ski</strong> — 45 km</li>
+            <li><strong>Aéroport Tarbes-Lourdes-Pyrénées</strong> — 23 km</li>
+          </ul>
+
+          <h3>Réservez votre séjour à Coarraze</h3>
+          <p>
+            La Cabane de Sandro est disponible toute l'année pour des séjours de 2 nuits minimum. Réservez directement sur Booking.com ou contactez-nous pour une réservation en direct.
+          </p>
+          
+          <div class="cta-buttons">
+            <a href="https://www.booking.com/hotel/fr/la-cabane-coarraze.fr.html?aid=866831&app_hotel_id=14967301" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver sur Booking.com</a>
+            <a href="/#reservation" class="btn btn-outline">Nous contacter</a>
+          </div>
+        </div>
+
+        <aside class="content-sidebar">
+          <div class="sidebar-card">
+            <img src="/images/762533986.jpg" alt="Gîte La Cabane de Sandro à Coarraze - vue extérieure" loading="lazy" />
+            <div class="sidebar-card-body">
+              <h4>Infos pratiques</h4>
+              <dl>
+                <dt>Adresse</dt>
+                <dd>4 Chem. d'Escaraude, 64800 Coarraze</dd>
+                <dt>Capacité</dt>
+                <dd>2 personnes (couple)</dd>
+                <dt>Surface</dt>
+                <dd>22 m² + terrasse 8 m²</dd>
+                <dt>Terrain</dt>
+                <dd>1200 m² privatif</dd>
+                <dt>Arrivée / Départ</dt>
+                <dd>15h00 / 11h00</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-body">
+              <h4>Équipements inclus</h4>
+              <ul class="amenity-list">
+                <li>Bain nordique (supplément)</li>
+                <li>WiFi gratuit</li>
+                <li>Climatisation / chauffage</li>
+                <li>Cuisine équipée</li>
+                <li>Parking privé</li>
+                <li>Linge de lit et serviettes</li>
+                <li>Peignoirs et savon</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sidebar-links">
+            <h4>Découvrir aussi</h4>
+            <a href="/bain-nordique-bearn/">Le bain nordique</a>
+            <a href="/weekend-romantique-pyrenees/">Week-end romantique</a>
+            <a href="/activites-coarraze-bearn/">Activités autour</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-12);
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+  }
+
+  .page-hero-content h1 {
+    font-size: clamp(2rem, 6vw, var(--text-6xl));
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .breadcrumb a {
+    color: var(--color-wood-light);
+  }
+
+  .breadcrumb span {
+    margin: 0 var(--space-2);
+  }
+
+  .content-section {
+    padding: var(--space-20) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .content-main h2 {
+    font-size: var(--text-4xl);
+    color: var(--color-pine);
+    font-style: italic;
+    margin-bottom: var(--space-6);
+  }
+
+  .content-main h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-pine);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .content-main p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-dark);
+  }
+
+  .features-list, .location-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+  }
+
+  .features-list li, .location-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: var(--text-lg);
+    color: var(--color-text-dark);
+  }
+
+  .features-list li::before {
+    content: "✓ ";
+    color: var(--color-wood);
+    font-weight: bold;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .sidebar-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .sidebar-card-body {
+    padding: var(--space-6);
+  }
+
+  .sidebar-card-body h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-card-body dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .sidebar-card-body dt {
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+
+  .sidebar-card-body dd {
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  .amenity-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .amenity-list li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    color: var(--color-text-dark);
+  }
+
+  .sidebar-links {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-links h4 {
+    font-size: var(--text-lg);
+    color: var(--color-pine);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-links a {
+    display: block;
+    padding: var(--space-3) 0;
+    color: var(--color-wood);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .sidebar-links a:hover {
+    color: var(--color-pine);
+  }
+
+  @media (max-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      height: 40vh;
+      min-height: 280px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
